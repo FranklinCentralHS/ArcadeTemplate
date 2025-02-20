@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://dljwa5advy6qn"]
+
+[ext_resource type="Texture2D" uid="uid://bpju03hes6d4x" path="res://assets/Character Tilesheet/8366 (2).png" id="1_8soi3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eoyha"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sff7y"]
+atlas = ExtResource("1_8soi3")
+region = Rect2(0, 10, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwjwj"]
+atlas = ExtResource("1_8soi3")
+region = Rect2(17, 10, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pq7tg"]
+atlas = ExtResource("1_8soi3")
+region = Rect2(34, 10, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow86m"]
+atlas = ExtResource("1_8soi3")
+region = Rect2(51, 10, 17, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_itel7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sff7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwjwj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pq7tg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ow86m")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Link" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_eoyha")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_itel7")
