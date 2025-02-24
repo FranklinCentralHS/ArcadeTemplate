@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dljwa5advy6qn"]
+[gd_scene load_steps=9 format=3 uid="uid://dljwa5advy6qn"]
 
 [ext_resource type="Texture2D" uid="uid://bpju03hes6d4x" path="res://assets/Character Tilesheet/8366 (2).png" id="1_8soi3"]
+[ext_resource type="Script" path="res://Scripts/Player1.gd" id="1_t28vw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eoyha"]
+radius = 8.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sff7y"]
 atlas = ExtResource("1_8soi3")
@@ -12,13 +14,13 @@ region = Rect2(0, 10, 17, 18)
 atlas = ExtResource("1_8soi3")
 region = Rect2(17, 10, 17, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pq7tg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjl6g"]
 atlas = ExtResource("1_8soi3")
-region = Rect2(34, 10, 17, 18)
+region = Rect2(34, 10, 17, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ow86m"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p0hs"]
 atlas = ExtResource("1_8soi3")
-region = Rect2(51, 10, 17, 18)
+region = Rect2(51, 10, 17, 20)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_itel7"]
 animations = [{
@@ -30,25 +32,32 @@ animations = [{
 "texture": SubResource("AtlasTexture_uwjwj")
 }],
 "loop": true,
-"name": &"default",
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"left",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pq7tg")
+"texture": SubResource("AtlasTexture_bjl6g")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ow86m")
+"texture": SubResource("AtlasTexture_5p0hs")
 }],
 "loop": true,
-"name": &"new_animation",
+"name": &"right",
 "speed": 5.0
 }]
 
-[node name="Link" type="CharacterBody2D"]
+[node name="Player 1" type="CharacterBody2D"]
+script = ExtResource("1_t28vw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_eoyha")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_itel7")
+animation = &"right"
