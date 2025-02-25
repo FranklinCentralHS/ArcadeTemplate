@@ -10,6 +10,7 @@ anchor_bottom = 1.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.00774, 0.993954)
 
-[node name="Link" parent="." instance=ExtResource("1_sf3jn")]
-position = Vector2(199, 112)
+[node name="Player 1" parent="." instance=ExtResource("1_sf3jn")]
+position = Vector2(230, 125)
